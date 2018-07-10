@@ -1,0 +1,16 @@
+PODS:
+  - SuperResolutionKit (0.1.0)
+
+DEPENDENCIES:
+  - SuperResolutionKit (from `../`)
+
+EXTERNAL SOURCES:
+  SuperResolutionKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SuperResolutionKit: ac4d37d3e6f4d4cc96ddd3002a17a9b9302b6b85
+
+PODFILE CHECKSUM: d8513d45bc5aa1df7439db510bd9c0bb3bbf6477
+
+COCOAPODS: 1.5.3

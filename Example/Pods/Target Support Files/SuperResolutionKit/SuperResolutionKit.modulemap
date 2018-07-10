@@ -1,0 +1,6 @@
+framework module SuperResolutionKit {
+  umbrella header "SuperResolutionKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

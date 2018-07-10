@@ -1,0 +1,22 @@
+{
+  "name": "SuperResolutionKit",
+  "version": "0.1.0",
+  "summary": "A short description of SuperResolutionKit.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/kenmaz/SuperResolutionKit",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "kenmaz": "kentaro.matsumae@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/kenmaz/SuperResolutionKit.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "SuperResolutionKit/Classes/**/*"
+}
