@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'SuperResolutionKit_Example' do
+  pod 'SuperResolutionKit', :path => '../'
+
+  target 'SuperResolutionKit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
