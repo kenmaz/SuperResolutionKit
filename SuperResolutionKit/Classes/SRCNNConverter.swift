@@ -10,7 +10,7 @@ import CoreML
 
 public class SRCNNConverter {
 
-    static let shared = SRCNNConverter()
+    public static let shared = SRCNNConverter()
     private let shrinkSize = 0
 
     private let patchInSize = 200
@@ -129,7 +129,7 @@ public class SRCNNConverter {
         return dst
     }
     
-    func convert(from src: UIImage) -> UIImage? {
+    public func convert(from src: UIImage) -> UIImage? {
         print("start")
         let t = Date()
         
