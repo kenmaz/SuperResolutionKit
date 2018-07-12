@@ -46,7 +46,7 @@
 		74C399C293CDAC22E2F05B61 /* Pods_SuperResolutionKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperResolutionKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9475C42A744F126F04C0AD76 /* Pods-SuperResolutionKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperResolutionKit_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperResolutionKit_Example/Pods-SuperResolutionKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		A4A802F98B3F3F66E68F8EEE /* Pods-SuperResolutionKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperResolutionKit_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperResolutionKit_Tests/Pods-SuperResolutionKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		B58294B86B3774C5E3391698 /* SuperResolutionKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SuperResolutionKit.podspec; path = ../SuperResolutionKit.podspec; sourceTree = "<group>"; };
+		B58294B86B3774C5E3391698 /* SuperResolutionKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SuperResolutionKit.podspec; path = ../SuperResolutionKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
