@@ -11,15 +11,21 @@ import SuperResolutionKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var imageView: UIImageView!
+    
+    let input = UIImage(named: "sample.png")!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        SuperResolutionKit.hello()
+        reset(self)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func runSR(_ sender: Any) {
+        imageView.setSRImage(image: input)
     }
-
+    
+    @IBAction func reset(_ sender: Any) {
+        imageView.image = input
+    }
 }
 

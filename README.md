@@ -27,3 +27,6 @@ kenmaz, kentaro.matsumae@gmail.com
 ## License
 
 SuperResolutionKit is available under the MIT license. See the LICENSE file for more info.
+
+### CoreMLHelpers
+CoreMLHelpers is copyright 2017 Matthijs Hollemans and is licensed under the terms of the [MIT license](https://github.com/hollance/CoreMLHelpers/blob/master/LICENSE.txt).

@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "SRCNNKit.h"
 
 FOUNDATION_EXPORT double SuperResolutionKitVersionNumber;
 FOUNDATION_EXPORT const unsigned char SuperResolutionKitVersionString[];

@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  SuperResolutionKit: 695fda64986bd6bc3e1c14030af06fb18a7b0ba1
+  SuperResolutionKit: 8925ef36ad912a9f4d7d648d73ce4937f264281d
 
 PODFILE CHECKSUM: e8521b55d2f3428cc0d5dd6d81c51d3c9aaa590e
 

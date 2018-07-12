@@ -31,7 +31,10 @@ This is a super resolution implementation with Keras/CoreML
   s.ios.deployment_target = '11.0'
   s.swift_version = '4.1'
 
-  s.source_files = 'SuperResolutionKit/Classes/**/*'
+  s.source_files = [
+    'SuperResolutionKit/Classes/*',
+    'SuperResolutionKit/Classes/CoreMLHelpers/*'
+  ]
   s.resource_bundles = {
     'SuperResolutionKit' => [
       'SuperResolutionKit/Assets/*'
