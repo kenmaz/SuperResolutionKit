@@ -1,9 +1,9 @@
 {
   "name": "SuperResolutionKit",
   "version": "0.1.0",
-  "summary": "A short description of SuperResolutionKit.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/kenmaz/SuperResolutionKit",
+  "summary": "Super resolution implementation with Keras/CoreML",
+  "description": "This is a super resolution implementation with Keras/CoreML",
+  "homepage": "https://github.com/kenmaz/",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -16,7 +16,13 @@
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "11.0"
   },
-  "source_files": "SuperResolutionKit/Classes/**/*"
+  "swift_version": "4.1",
+  "source_files": "SuperResolutionKit/Classes/**/*",
+  "resource_bundles": {
+    "SuperResolutionKit": [
+      "SuperResolutionKit/Assets/*"
+    ]
+  }
 }

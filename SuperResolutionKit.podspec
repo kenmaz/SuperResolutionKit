@@ -28,14 +28,15 @@ This is a super resolution implementation with Keras/CoreML
   s.source           = { :git => 'https://github.com/kenmaz/SuperResolutionKit.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '11.0'
   s.swift_version = '4.1'
 
   s.source_files = 'SuperResolutionKit/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'SuperResolutionKit' => ['SuperResolutionKit/Assets/*.png']
-  # }
+  s.resource_bundles = {
+    'SuperResolutionKit' => [
+      'SuperResolutionKit/Assets/*'
+    ]
+  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'

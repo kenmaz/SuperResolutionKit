@@ -1,4 +1,5 @@
 use_frameworks!
+platform :ios, '11.0'
 
 target 'SuperResolutionKit_Example' do
   pod 'SuperResolutionKit', :path => '../'

@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0458C6CBD86D30DC4CB2B6C011AE97B5 /* SuperResolutionKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B1748677AE8D2F4C78627A0D428BF09 /* SuperResolutionKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0458C6CBD86D30DC4CB2B6C011AE97B5 /* SuperResolutionKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 06206E86E2A3C3807668D6ED5A94B7C0 /* SuperResolutionKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		203FF1F20565B2CECE2F4F95D255A2BA /* Pods-SuperResolutionKit_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B8421731217E7919E94821D8E3587508 /* Pods-SuperResolutionKit_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		27D2C0B2E37AD4C2442A2C8FB0B688FD /* SuperResolutionKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9DDBA5A6EAC7BC437D6E6D2C6FFCFE9B /* SuperResolutionKit.bundle */; };
 		382AF1E9ADBC9E21C0445474E61E9545 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		61403A5D2D3B897A2C02AA55ACA28B11 /* Pods-SuperResolutionKit_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7416E2C9840A6AC5143783CD48DD9E1A /* Pods-SuperResolutionKit_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		61F67DFEB74E5CFADE6ECA9AAF32ABD8 /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B538907C92A17AB4DAD54E5E0D75A03 /* test.png */; };
+		707D16A490A23EC05CB1C9B771E3BD62 /* SRCNN.mlmodelc in Resources */ = {isa = PBXBuildFile; fileRef = F5B12CD7793D5076E179833309A33249 /* SRCNN.mlmodelc */; };
 		71193E1F0B7114FE557B40809ED5C2FD /* Pods-SuperResolutionKit_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C56847A42D5446482DB17B19BD2CA7E8 /* Pods-SuperResolutionKit_Tests-dummy.m */; };
-		A00BA88F23D3DEF4D15379D4ABC12187 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD958397E2655F364A9BE07D927604C /* ReplaceMe.swift */; };
+		A00BA88F23D3DEF4D15379D4ABC12187 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0648E461A1237AACA669D592AFD133 /* ReplaceMe.swift */; };
 		AF8448DDB46CCAB9FA3C4401C92F0E8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
-		B10D4F36DBDF24BA9515B1EA357DE1FE /* SuperResolutionKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5CEEAF1CFF4E1A113FFA8E69A51373 /* SuperResolutionKit-dummy.m */; };
+		B10D4F36DBDF24BA9515B1EA357DE1FE /* SuperResolutionKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 533D412EED3FC3A4C33F30C7C431E5B9 /* SuperResolutionKit-dummy.m */; };
 		F01D455C04332C6CADF731937D5EBE62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		FA79BE9E7B6212F19792E0F96A15CC2B /* Pods-SuperResolutionKit_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 842CCAB7C16F3837D5F6584C8D1BDDD4 /* Pods-SuperResolutionKit_Example-dummy.m */; };
 /* End PBXBuildFile section */
@@ -34,44 +37,55 @@
 			remoteGlobalIDString = E6ACB8C5626E2CF62A27C4790A0CB599;
 			remoteInfo = SuperResolutionKit;
 		};
+		BC5B2924F3826F60F9D00F4DC7467DDF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6E667D642E93A7B226EF30F8AA6DD3E2;
+			remoteInfo = "SuperResolutionKit-SuperResolutionKit";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06206E86E2A3C3807668D6ED5A94B7C0 /* SuperResolutionKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SuperResolutionKit-umbrella.h"; sourceTree = "<group>"; };
+		0B538907C92A17AB4DAD54E5E0D75A03 /* test.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = test.png; path = SuperResolutionKit/Assets/test.png; sourceTree = "<group>"; };
 		1096DC0553729BFD018624FED8DE92F6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1E5CEEAF1CFF4E1A113FFA8E69A51373 /* SuperResolutionKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SuperResolutionKit-dummy.m"; sourceTree = "<group>"; };
+		1B3130A124AF247B9795C16BD35C47F2 /* SuperResolutionKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = SuperResolutionKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		1EFE98D52EB8FE777386B7A65CCC478A /* Pods-SuperResolutionKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SuperResolutionKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		254821CD4EE0CE27E19A11354854F524 /* Pods-SuperResolutionKit_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SuperResolutionKit_Example-frameworks.sh"; sourceTree = "<group>"; };
+		2C82EB23E9F157FB3F71E49C37836040 /* Pods_SuperResolutionKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SuperResolutionKit_Example.framework; path = "Pods-SuperResolutionKit_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		330FE7E7B72328A53B9BB901790B3001 /* Pods_SuperResolutionKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SuperResolutionKit_Tests.framework; path = "Pods-SuperResolutionKit_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B6A9980ED47E074899F51E14B3B09D3 /* SuperResolutionKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SuperResolutionKit.framework; path = SuperResolutionKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D92BFFC366EA71CDBC9E1D56A975D59 /* Pods-SuperResolutionKit_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SuperResolutionKit_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		43C4623724116D21F9BD26BB1B049936 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		533D412EED3FC3A4C33F30C7C431E5B9 /* SuperResolutionKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SuperResolutionKit-dummy.m"; sourceTree = "<group>"; };
 		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		693A8B1E20C6A1AF08C5E46963D21C49 /* Pods-SuperResolutionKit_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SuperResolutionKit_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		6DD958397E2655F364A9BE07D927604C /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = SuperResolutionKit/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
 		72FF90910DCCF739644A32A7C1D8ED99 /* Pods-SuperResolutionKit_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SuperResolutionKit_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		7416E2C9840A6AC5143783CD48DD9E1A /* Pods-SuperResolutionKit_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SuperResolutionKit_Tests-umbrella.h"; sourceTree = "<group>"; };
-		741C1C5F4EDED6793BB7C7A8416447F8 /* SuperResolutionKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SuperResolutionKit.xcconfig; sourceTree = "<group>"; };
-		807871AFEB56CA614B3C91DBEE7AF12B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		842CCAB7C16F3837D5F6584C8D1BDDD4 /* Pods-SuperResolutionKit_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SuperResolutionKit_Example-dummy.m"; sourceTree = "<group>"; };
 		8651FC9EAD182BA930C1DA0AA7A54EBD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		868F758A70A36334DA0D5F89F6C5E484 /* SuperResolutionKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SuperResolutionKit.xcconfig; sourceTree = "<group>"; };
 		8A15D4DA2D787B08A2FED5D5771C2BA0 /* Pods-SuperResolutionKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SuperResolutionKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		8DD1F761C7A3A190E8E063EB4AC8A1AE /* Pods-SuperResolutionKit_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SuperResolutionKit_Example.modulemap"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		958B8AA0C10CAA51ACA72EE091D14E29 /* Pods_SuperResolutionKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SuperResolutionKit_Tests.framework; path = "Pods-SuperResolutionKit_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9B1748677AE8D2F4C78627A0D428BF09 /* SuperResolutionKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SuperResolutionKit-umbrella.h"; sourceTree = "<group>"; };
-		9F6C95BA6A239C8C1DE84BB3084E9C04 /* SuperResolutionKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SuperResolutionKit.modulemap; sourceTree = "<group>"; };
-		A46B328824A1B1F126F926663C96F4F6 /* SuperResolutionKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = SuperResolutionKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9B5CDCED8E0E2C4125F4D8C533C16D54 /* SuperResolutionKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SuperResolutionKit-prefix.pch"; sourceTree = "<group>"; };
+		9DDBA5A6EAC7BC437D6E6D2C6FFCFE9B /* SuperResolutionKit.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = SuperResolutionKit.bundle; path = "SuperResolutionKit-SuperResolutionKit.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9C59B0D4EAC6D5C90EE9D13C9626275 /* Pods-SuperResolutionKit_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SuperResolutionKit_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B8421731217E7919E94821D8E3587508 /* Pods-SuperResolutionKit_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SuperResolutionKit_Example-umbrella.h"; sourceTree = "<group>"; };
 		B907FEB260D9E54EBCCC32D63DAA0D81 /* Pods-SuperResolutionKit_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SuperResolutionKit_Example-resources.sh"; sourceTree = "<group>"; };
 		BF98DC7BF60F9C9CE2B55ED5E7346822 /* Pods-SuperResolutionKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SuperResolutionKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		C238942ED6F6ADB16580AC325731D714 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C56847A42D5446482DB17B19BD2CA7E8 /* Pods-SuperResolutionKit_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SuperResolutionKit_Tests-dummy.m"; sourceTree = "<group>"; };
 		CB9773A09DD542A72F48A833F5ED4A69 /* Pods-SuperResolutionKit_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SuperResolutionKit_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		D4AE9932E2BCA8F3CFBA9216A22540B7 /* SuperResolutionKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SuperResolutionKit.framework; path = SuperResolutionKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D58D8A6DF5D97D01A3362268A16AE8B6 /* SuperResolutionKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SuperResolutionKit-prefix.pch"; sourceTree = "<group>"; };
-		DB6D7CD2C0B0D4280AE7ECC990F1FA6B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		E0ABE64E7DB5863C223E0D4213A2C0AC /* Pods_SuperResolutionKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SuperResolutionKit_Example.framework; path = "Pods-SuperResolutionKit_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE0648E461A1237AACA669D592AFD133 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = SuperResolutionKit/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
+		DA9D42F3ADFD685E73880EFA27CEB3DF /* ResourceBundle-SuperResolutionKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-SuperResolutionKit-Info.plist"; sourceTree = "<group>"; };
+		DB168D9B0CD0F6B1A8464760B42943F2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E495BA51F1C63CF63A9B6B240263D0EF /* Pods-SuperResolutionKit_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SuperResolutionKit_Tests.modulemap"; sourceTree = "<group>"; };
 		E664C14A15EC5A6ED36BB273E48D9B71 /* Pods-SuperResolutionKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SuperResolutionKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		ED0A9BDD30FEF4E471E2752737013FEC /* SuperResolutionKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SuperResolutionKit.modulemap; sourceTree = "<group>"; };
+		F5B12CD7793D5076E179833309A33249 /* SRCNN.mlmodelc */ = {isa = PBXFileReference; includeInIndex = 1; name = SRCNN.mlmodelc; path = SuperResolutionKit/Assets/SRCNN.mlmodelc; sourceTree = "<group>"; };
 		F6AD7551A0E59B622EEAD41219311EE9 /* Pods-SuperResolutionKit_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SuperResolutionKit_Tests-resources.sh"; sourceTree = "<group>"; };
+		FC698D227C55FD4F6BA6C1E554F06E3E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +94,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				382AF1E9ADBC9E21C0445474E61E9545 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		82BC6CF753286E734E28BBBFD166172F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +159,23 @@
 			path = "Target Support Files/Pods-SuperResolutionKit_Example";
 			sourceTree = "<group>";
 		};
+		0826607CBE6449494ACE2ECB2D209B8B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F5B12CD7793D5076E179833309A33249 /* SRCNN.mlmodelc */,
+				0B538907C92A17AB4DAD54E5E0D75A03 /* test.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		14BF26AD44F275DAE2439E972295F161 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A69CF6925FDCC8BD5C945C9CAA42EF7D /* SuperResolutionKit */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
 		5E0D919E635D23B70123790B8308F8EF /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,68 +184,53 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		6B6B34E19D265CF7EA6990DDDB132660 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				E0ABE64E7DB5863C223E0D4213A2C0AC /* Pods_SuperResolutionKit_Example.framework */,
-				958B8AA0C10CAA51ACA72EE091D14E29 /* Pods_SuperResolutionKit_Tests.framework */,
-				D4AE9932E2BCA8F3CFBA9216A22540B7 /* SuperResolutionKit.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		718880D0B8678D10270C905BF5733DA1 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				7658AE2FAD9CBD7FC6C2EDF26175C113 /* SuperResolutionKit */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		7658AE2FAD9CBD7FC6C2EDF26175C113 /* SuperResolutionKit */ = {
-			isa = PBXGroup;
-			children = (
-				6DD958397E2655F364A9BE07D927604C /* ReplaceMe.swift */,
-				A6F383BB3321CFD9DE0D5E7B7BD9826A /* Pod */,
-				B9FE31C5FC19A4BA9DCF5266836A95A2 /* Support Files */,
-			);
-			name = SuperResolutionKit;
-			path = ../..;
-			sourceTree = "<group>";
-		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				718880D0B8678D10270C905BF5733DA1 /* Development Pods */,
+				14BF26AD44F275DAE2439E972295F161 /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				6B6B34E19D265CF7EA6990DDDB132660 /* Products */,
+				7DBD8D2876A372037786B5EEB813BDB9 /* Products */,
 				CDB9DD3F2CC1F26AD25E9542F7EDFAF1 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		A6F383BB3321CFD9DE0D5E7B7BD9826A /* Pod */ = {
+		7DBD8D2876A372037786B5EEB813BDB9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DB6D7CD2C0B0D4280AE7ECC990F1FA6B /* LICENSE */,
-				807871AFEB56CA614B3C91DBEE7AF12B /* README.md */,
-				A46B328824A1B1F126F926663C96F4F6 /* SuperResolutionKit.podspec */,
+				2C82EB23E9F157FB3F71E49C37836040 /* Pods_SuperResolutionKit_Example.framework */,
+				330FE7E7B72328A53B9BB901790B3001 /* Pods_SuperResolutionKit_Tests.framework */,
+				9DDBA5A6EAC7BC437D6E6D2C6FFCFE9B /* SuperResolutionKit.bundle */,
+				3B6A9980ED47E074899F51E14B3B09D3 /* SuperResolutionKit.framework */,
 			);
-			name = Pod;
+			name = Products;
 			sourceTree = "<group>";
 		};
-		B9FE31C5FC19A4BA9DCF5266836A95A2 /* Support Files */ = {
+		818B0673A20B832E90D2015FE0553808 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				C238942ED6F6ADB16580AC325731D714 /* Info.plist */,
-				9F6C95BA6A239C8C1DE84BB3084E9C04 /* SuperResolutionKit.modulemap */,
-				741C1C5F4EDED6793BB7C7A8416447F8 /* SuperResolutionKit.xcconfig */,
-				1E5CEEAF1CFF4E1A113FFA8E69A51373 /* SuperResolutionKit-dummy.m */,
-				D58D8A6DF5D97D01A3362268A16AE8B6 /* SuperResolutionKit-prefix.pch */,
-				9B1748677AE8D2F4C78627A0D428BF09 /* SuperResolutionKit-umbrella.h */,
+				DB168D9B0CD0F6B1A8464760B42943F2 /* Info.plist */,
+				DA9D42F3ADFD685E73880EFA27CEB3DF /* ResourceBundle-SuperResolutionKit-Info.plist */,
+				ED0A9BDD30FEF4E471E2752737013FEC /* SuperResolutionKit.modulemap */,
+				868F758A70A36334DA0D5F89F6C5E484 /* SuperResolutionKit.xcconfig */,
+				533D412EED3FC3A4C33F30C7C431E5B9 /* SuperResolutionKit-dummy.m */,
+				9B5CDCED8E0E2C4125F4D8C533C16D54 /* SuperResolutionKit-prefix.pch */,
+				06206E86E2A3C3807668D6ED5A94B7C0 /* SuperResolutionKit-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/SuperResolutionKit";
+			sourceTree = "<group>";
+		};
+		A69CF6925FDCC8BD5C945C9CAA42EF7D /* SuperResolutionKit */ = {
+			isa = PBXGroup;
+			children = (
+				CE0648E461A1237AACA669D592AFD133 /* ReplaceMe.swift */,
+				CAC27569854EFDB5F3CC5699CF281236 /* Pod */,
+				0826607CBE6449494ACE2ECB2D209B8B /* Resources */,
+				818B0673A20B832E90D2015FE0553808 /* Support Files */,
+			);
+			name = SuperResolutionKit;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -216,6 +239,16 @@
 				5E0D919E635D23B70123790B8308F8EF /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CAC27569854EFDB5F3CC5699CF281236 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				FC698D227C55FD4F6BA6C1E554F06E3E /* LICENSE */,
+				43C4623724116D21F9BD26BB1B049936 /* README.md */,
+				1B3130A124AF247B9795C16BD35C47F2 /* SuperResolutionKit.podspec */,
+			);
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		CDB9DD3F2CC1F26AD25E9542F7EDFAF1 /* Targets Support Files */ = {
@@ -272,8 +305,25 @@
 			);
 			name = "Pods-SuperResolutionKit_Tests";
 			productName = "Pods-SuperResolutionKit_Tests";
-			productReference = 958B8AA0C10CAA51ACA72EE091D14E29 /* Pods_SuperResolutionKit_Tests.framework */;
+			productReference = 330FE7E7B72328A53B9BB901790B3001 /* Pods_SuperResolutionKit_Tests.framework */;
 			productType = "com.apple.product-type.framework";
+		};
+		6E667D642E93A7B226EF30F8AA6DD3E2 /* SuperResolutionKit-SuperResolutionKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84904E3DF0D758C76CA560F67C8FED88 /* Build configuration list for PBXNativeTarget "SuperResolutionKit-SuperResolutionKit" */;
+			buildPhases = (
+				4D10111734493F8EB3E419AB4DB12E61 /* Sources */,
+				82BC6CF753286E734E28BBBFD166172F /* Frameworks */,
+				05D75D7FE0983B5C6A7AB73B94ECFB75 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SuperResolutionKit-SuperResolutionKit";
+			productName = "SuperResolutionKit-SuperResolutionKit";
+			productReference = 9DDBA5A6EAC7BC437D6E6D2C6FFCFE9B /* SuperResolutionKit.bundle */;
+			productType = "com.apple.product-type.bundle";
 		};
 		7DCDE34C36D072C4442D2B64D7FCB09C /* Pods-SuperResolutionKit_Example */ = {
 			isa = PBXNativeTarget;
@@ -290,7 +340,7 @@
 			);
 			name = "Pods-SuperResolutionKit_Example";
 			productName = "Pods-SuperResolutionKit_Example";
-			productReference = E0ABE64E7DB5863C223E0D4213A2C0AC /* Pods_SuperResolutionKit_Example.framework */;
+			productReference = 2C82EB23E9F157FB3F71E49C37836040 /* Pods_SuperResolutionKit_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		E6ACB8C5626E2CF62A27C4790A0CB599 /* SuperResolutionKit */ = {
@@ -299,15 +349,17 @@
 			buildPhases = (
 				FDBCB5638ADB7E6BD0A2862EAF9739F6 /* Sources */,
 				456FF6F32A986696B67A39F9EDB7A691 /* Frameworks */,
+				4DC39F710E15684D5C511B7B079739F0 /* Resources */,
 				DDCB6AFD39EE9883F6E81D9EF23FE628 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DC630D496935F9CA9BB35B2E517ED687 /* PBXTargetDependency */,
 			);
 			name = SuperResolutionKit;
 			productName = SuperResolutionKit;
-			productReference = D4AE9932E2BCA8F3CFBA9216A22540B7 /* SuperResolutionKit.framework */;
+			productReference = 3B6A9980ED47E074899F51E14B3B09D3 /* SuperResolutionKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -327,16 +379,37 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 6B6B34E19D265CF7EA6990DDDB132660 /* Products */;
+			productRefGroup = 7DBD8D2876A372037786B5EEB813BDB9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				7DCDE34C36D072C4442D2B64D7FCB09C /* Pods-SuperResolutionKit_Example */,
 				287416BBE90F54D76099D49C2707297F /* Pods-SuperResolutionKit_Tests */,
 				E6ACB8C5626E2CF62A27C4790A0CB599 /* SuperResolutionKit */,
+				6E667D642E93A7B226EF30F8AA6DD3E2 /* SuperResolutionKit-SuperResolutionKit */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		05D75D7FE0983B5C6A7AB73B94ECFB75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				707D16A490A23EC05CB1C9B771E3BD62 /* SRCNN.mlmodelc in Resources */,
+				61F67DFEB74E5CFADE6ECA9AAF32ABD8 /* test.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4DC39F710E15684D5C511B7B079739F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27D2C0B2E37AD4C2442A2C8FB0B688FD /* SuperResolutionKit.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2A3D12BE0201A8E5CF21CFB0CDAC8E39 /* Sources */ = {
@@ -344,6 +417,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA79BE9E7B6212F19792E0F96A15CC2B /* Pods-SuperResolutionKit_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D10111734493F8EB3E419AB4DB12E61 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,14 +459,79 @@
 			target = E6ACB8C5626E2CF62A27C4790A0CB599 /* SuperResolutionKit */;
 			targetProxy = 8A3C2C0A96B29A446FE5E65E6BE9CF91 /* PBXContainerItemProxy */;
 		};
+		DC630D496935F9CA9BB35B2E517ED687 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SuperResolutionKit-SuperResolutionKit";
+			target = 6E667D642E93A7B226EF30F8AA6DD3E2 /* SuperResolutionKit-SuperResolutionKit */;
+			targetProxy = BC5B2924F3826F60F9D00F4DC7467DDF /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0E36DE4A573AB18853A1C8FE1599A6FF /* Release */ = {
+		08638A96A528B1EC32DE62F8A728389D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		14F2175DEB9225E2FD9744870AA2C6FD /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1EFE98D52EB8FE777386B7A65CCC478A /* Pods-SuperResolutionKit_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -398,7 +543,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-SuperResolutionKit_Example/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-SuperResolutionKit_Example/Pods-SuperResolutionKit_Example.modulemap";
@@ -417,44 +562,11 @@
 			};
 			name = Release;
 		};
-		2086E52231051CC56FC28FAC7A272963 /* Release */ = {
+		5282C88325661CEFE09A273466A9574D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A15D4DA2D787B08A2FED5D5771C2BA0 /* Pods-SuperResolutionKit_Tests.release.xcconfig */;
+			baseConfigurationReference = 868F758A70A36334DA0D5F89F6C5E484 /* SuperResolutionKit.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SuperResolutionKit_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SuperResolutionKit_Tests/Pods-SuperResolutionKit_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		83E1DE444BF921CC8FF3C4B9C1419AC3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 741C1C5F4EDED6793BB7C7A8416447F8 /* SuperResolutionKit.xcconfig */;
-			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -467,7 +579,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SuperResolutionKit/SuperResolutionKit-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SuperResolutionKit/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SuperResolutionKit/SuperResolutionKit.modulemap";
 				PRODUCT_MODULE_NAME = SuperResolutionKit;
@@ -476,7 +588,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -484,7 +596,77 @@
 			};
 			name = Release;
 		};
-		8B33C5230DE4A9DFA6D8F46505DD7AF7 /* Debug */ = {
+		81404707181824ACA165CCE9638A306E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF98DC7BF60F9C9CE2B55ED5E7346822 /* Pods-SuperResolutionKit_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SuperResolutionKit_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SuperResolutionKit_Tests/Pods-SuperResolutionKit_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		99817FBB7B756450F389E73B311DB714 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E664C14A15EC5A6ED36BB273E48D9B71 /* Pods-SuperResolutionKit_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SuperResolutionKit_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SuperResolutionKit_Example/Pods-SuperResolutionKit_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9DAE5233986C01ADB6E67169C53A3FD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -537,7 +719,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -547,11 +729,28 @@
 			};
 			name = Debug;
 		};
-		AB3E3AF5D3732E63EBE19D93A4497890 /* Debug */ = {
+		9FDE15AD9B4CEDF9F0CF21A820490E43 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BF98DC7BF60F9C9CE2B55ED5E7346822 /* Pods-SuperResolutionKit_Tests.debug.xcconfig */;
+			baseConfigurationReference = 868F758A70A36334DA0D5F89F6C5E484 /* SuperResolutionKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/SuperResolutionKit";
+				INFOPLIST_FILE = "Target Support Files/SuperResolutionKit/ResourceBundle-SuperResolutionKit-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_NAME = SuperResolutionKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		B226651A84C1754CF9099578E97657EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A15D4DA2D787B08A2FED5D5771C2BA0 /* Pods-SuperResolutionKit_Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -563,7 +762,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-SuperResolutionKit_Tests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-SuperResolutionKit_Tests/Pods-SuperResolutionKit_Tests.modulemap";
@@ -575,73 +774,33 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
-		};
-		B42B54097A876E8A982CBF5DAA91B1AB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-			};
 			name = Release;
 		};
-		EBA469413271CE28F7A9E77A0A590DF7 /* Debug */ = {
+		B6D60FBF74B5276987438DE16570B743 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 741C1C5F4EDED6793BB7C7A8416447F8 /* SuperResolutionKit.xcconfig */;
+			baseConfigurationReference = 868F758A70A36334DA0D5F89F6C5E484 /* SuperResolutionKit.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/SuperResolutionKit";
+				INFOPLIST_FILE = "Target Support Files/SuperResolutionKit/ResourceBundle-SuperResolutionKit-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_NAME = SuperResolutionKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		E08944E9F81A8B670F2A71A747975808 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 868F758A70A36334DA0D5F89F6C5E484 /* SuperResolutionKit.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -654,7 +813,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SuperResolutionKit/SuperResolutionKit-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SuperResolutionKit/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SuperResolutionKit/SuperResolutionKit.modulemap";
 				PRODUCT_MODULE_NAME = SuperResolutionKit;
@@ -663,42 +822,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		FF36704A8A287C88E1F65900B865A2D4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E664C14A15EC5A6ED36BB273E48D9B71 /* Pods-SuperResolutionKit_Example.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SuperResolutionKit_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SuperResolutionKit_Example/Pods-SuperResolutionKit_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -711,8 +835,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8B33C5230DE4A9DFA6D8F46505DD7AF7 /* Debug */,
-				B42B54097A876E8A982CBF5DAA91B1AB /* Release */,
+				9DAE5233986C01ADB6E67169C53A3FD2 /* Debug */,
+				08638A96A528B1EC32DE62F8A728389D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -720,8 +844,17 @@
 		33EA0E4EE3A9C6E8444239B708756FC0 /* Build configuration list for PBXNativeTarget "SuperResolutionKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EBA469413271CE28F7A9E77A0A590DF7 /* Debug */,
-				83E1DE444BF921CC8FF3C4B9C1419AC3 /* Release */,
+				E08944E9F81A8B670F2A71A747975808 /* Debug */,
+				5282C88325661CEFE09A273466A9574D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84904E3DF0D758C76CA560F67C8FED88 /* Build configuration list for PBXNativeTarget "SuperResolutionKit-SuperResolutionKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6D60FBF74B5276987438DE16570B743 /* Debug */,
+				9FDE15AD9B4CEDF9F0CF21A820490E43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -729,8 +862,8 @@
 		A2AFD685C718920A05D642F830EA5A6E /* Build configuration list for PBXNativeTarget "Pods-SuperResolutionKit_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AB3E3AF5D3732E63EBE19D93A4497890 /* Debug */,
-				2086E52231051CC56FC28FAC7A272963 /* Release */,
+				81404707181824ACA165CCE9638A306E /* Debug */,
+				B226651A84C1754CF9099578E97657EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -738,8 +871,8 @@
 		D583AC0A745A31D3CD9652F70F2B84AF /* Build configuration list for PBXNativeTarget "Pods-SuperResolutionKit_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FF36704A8A287C88E1F65900B865A2D4 /* Debug */,
-				0E36DE4A573AB18853A1C8FE1599A6FF /* Release */,
+				99817FBB7B756450F389E73B311DB714 /* Debug */,
+				14F2175DEB9225E2FD9744870AA2C6FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
