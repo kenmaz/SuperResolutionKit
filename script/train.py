@@ -4,7 +4,6 @@ from keras.callbacks import ModelCheckpoint, Callback, TensorBoard
 from keras.optimizers import SGD, Adam
 import numpy as np
 import math
-import pred
 import os
 import random
 from os import listdir, makedirs
