@@ -75,11 +75,11 @@ class SRCNN {
     }
 
     /// Construct a model that automatically loads the model from the app's bundle
-    convenience init() {
+    convenience init(modelName: String) {
         let bundle = Bundle(for: SRCNN.self)
         let url = bundle.url(forResource: "SuperResolutionKit", withExtension: "bundle")!
         let srBundle = Bundle(url: url)!
-        let assetPath = srBundle.url(forResource: "SRCNN", withExtension: "mlmodelc")
+        let assetPath = srBundle.url(forResource: modelName, withExtension: "mlmodelc")
         try! self.init(contentsOf: assetPath!)
     }
 

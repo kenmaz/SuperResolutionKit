@@ -20,4 +20,15 @@ extension UIImageView {
             }
         }
     }
+    public func setFSRImage(image src: UIImage) {
+        self.image = src
+        DispatchQueue.global().async { [weak self] in
+            if let output = FSRCNNConverter.shared.convert(from: src) {
+                DispatchQueue.main.async {
+                    self?.image = output
+                    self?.layer.add(CATransition(), forKey: nil)
+                }
+            }
+        }
+    }
 }

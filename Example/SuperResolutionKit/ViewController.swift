@@ -24,6 +24,10 @@ class ViewController: UIViewController {
         imageView.setSRImage(image: input)
     }
     
+    @IBAction func runFSR(_ sender: Any) {
+        imageView.setFSRImage(image: input)
+    }
+
     @IBAction func reset(_ sender: Any) {
         imageView.image = input
     }

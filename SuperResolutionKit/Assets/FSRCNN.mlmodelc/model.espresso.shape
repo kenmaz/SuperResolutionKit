@@ -1,0 +1,58 @@
+{
+  "layer_shapes" : {
+    "output1" : {
+      "k" : 3,
+      "w" : 200,
+      "n" : 1,
+      "h" : 200
+    },
+    "conv2d_6__activation___output" : {
+      "k" : 12,
+      "w" : 100,
+      "n" : 1,
+      "h" : 100
+    },
+    "conv2d_2__activation___output" : {
+      "k" : 12,
+      "w" : 100,
+      "n" : 1,
+      "h" : 100
+    },
+    "conv2d_1__activation___output" : {
+      "k" : 56,
+      "w" : 100,
+      "n" : 1,
+      "h" : 100
+    },
+    "conv2d_4__activation___output" : {
+      "k" : 12,
+      "w" : 100,
+      "n" : 1,
+      "h" : 100
+    },
+    "conv2d_5__activation___output" : {
+      "k" : 12,
+      "w" : 100,
+      "n" : 1,
+      "h" : 100
+    },
+    "image" : {
+      "k" : 3,
+      "w" : 100,
+      "n" : 1,
+      "h" : 100
+    },
+    "conv2d_3__activation___output" : {
+      "k" : 12,
+      "w" : 100,
+      "n" : 1,
+      "h" : 100
+    },
+    "conv2d_7_output" : {
+      "k" : 56,
+      "w" : 100,
+      "n" : 1,
+      "h" : 100
+    }
+  }
+}

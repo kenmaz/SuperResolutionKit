@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -23,35 +24,44 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T9f-co-TZ9">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Mi-hw-JM7">
-                                <rect key="frame" x="16" y="28" width="50" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Run SR"/>
-                                <connections>
-                                    <action selector="runSR:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="yDV-XG-ecQ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PS9-dq-nhI">
-                                <rect key="frame" x="16" y="74" width="39" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Reset"/>
-                                <connections>
-                                    <action selector="reset:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="DUh-kg-kA2"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="VzB-ik-OEJ">
+                                <rect key="frame" x="32" y="36" width="60" height="122"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Mi-hw-JM7" userLabel="Run SRCNN">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="SRCNN"/>
+                                        <connections>
+                                            <action selector="runSR:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="yDV-XG-ecQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sU-NR-Vpm" userLabel="Run FSRCNN">
+                                        <rect key="frame" x="0.0" y="46" width="60" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="FSRCNN"/>
+                                        <connections>
+                                            <action selector="runFSR:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6fX-Lh-DRp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PS9-dq-nhI">
+                                        <rect key="frame" x="0.0" y="92" width="60" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Reset"/>
+                                        <connections>
+                                            <action selector="reset:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="DUh-kg-kA2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="VzB-ik-OEJ" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="16" id="0cd-zd-L92"/>
                             <constraint firstAttribute="trailing" secondItem="T9f-co-TZ9" secondAttribute="trailing" id="73T-Ph-5xe"/>
-                            <constraint firstItem="PS9-dq-nhI" firstAttribute="top" secondItem="9Mi-hw-JM7" secondAttribute="bottom" constant="16" id="CNu-kw-u7B"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="T9f-co-TZ9" secondAttribute="bottom" id="Hx6-vy-073"/>
-                            <constraint firstItem="PS9-dq-nhI" firstAttribute="leading" secondItem="9Mi-hw-JM7" secondAttribute="leading" id="JFX-ul-lGK"/>
                             <constraint firstItem="T9f-co-TZ9" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="Jkh-Kh-du0"/>
-                            <constraint firstItem="9Mi-hw-JM7" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="Nzi-55-WFS"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PS9-dq-nhI" secondAttribute="trailing" constant="16" id="PXY-Zk-oFT"/>
                             <constraint firstItem="T9f-co-TZ9" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="ZcM-5o-97x"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9Mi-hw-JM7" secondAttribute="trailing" constant="16" id="h1W-q2-zFc"/>
-                            <constraint firstItem="9Mi-hw-JM7" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="hSF-zH-Kc2"/>
+                            <constraint firstItem="VzB-ik-OEJ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="16" id="rW1-46-jpx"/>
                         </constraints>
                     </view>
                     <connections>
