@@ -1,5 +1,5 @@
 from keras.models import Sequential
-from keras.layers import Conv2D, Conv2DTranspose, Input, BatchNormalization
+from keras.layers import Conv2D, Conv2DTranspose, Input, BatchNormalization, PReLU
 from keras.callbacks import ModelCheckpoint, Callback, TensorBoard
 from keras.optimizers import SGD, Adam
 import numpy as np
@@ -16,12 +16,16 @@ def model():
     m = 4
     c = 3
     SRCNN = Sequential()
-    SRCNN.add(Conv2D(nb_filter=d, nb_row=5, nb_col=5, init='glorot_uniform', activation='relu', border_mode='same', bias=True, input_shape=(100, 100, 3)))
-    SRCNN.add(Conv2D(nb_filter=s, nb_row=1, nb_col=1, init='glorot_uniform', activation='relu', border_mode='same', bias=True))
+    SRCNN.add(Conv2D(nb_filter=d, nb_row=5, nb_col=5, init='glorot_uniform', border_mode='same', bias=True, input_shape=(100, 100, 3)))
+    SRCNN.add(PReLU(shared_axes=[1, 2]))
+    SRCNN.add(Conv2D(nb_filter=s, nb_row=1, nb_col=1, init='glorot_uniform', border_mode='same', bias=True))
+    SRCNN.add(PReLU(shared_axes=[1, 2]))
     for i in range(m):
-        SRCNN.add(Conv2D(nb_filter=s, nb_row=3, nb_col=3, init='glorot_uniform', activation='relu', border_mode='same', bias=True))
-    SRCNN.add(Conv2D(nb_filter=d, nb_row=1, nb_col=1, init='glorot_uniform', activation='linear', border_mode='same', bias=True))
-    SRCNN.add(Conv2DTranspose(filters=3, kernel_size=(9,9), strides=(2,2), init='glorot_uniform', activation='linear', border_mode='same', bias=True))
+        SRCNN.add(Conv2D(nb_filter=s, nb_row=3, nb_col=3, init='glorot_uniform', border_mode='same', bias=True))
+        SRCNN.add(PReLU(shared_axes=[1, 2]))
+    SRCNN.add(Conv2D(nb_filter=d, nb_row=1, nb_col=1, init='glorot_uniform', border_mode='same', bias=True))
+    SRCNN.add(PReLU(shared_axes=[1, 2]))
+    SRCNN.add(Conv2DTranspose(filters=3, kernel_size=(9,9), strides=(2,2), init='glorot_uniform', border_mode='same', bias=True))
 
     adam = Adam(lr=0.0003)
     SRCNN.compile(optimizer=adam, loss='mean_squared_error', metrics=['mean_squared_error'])
