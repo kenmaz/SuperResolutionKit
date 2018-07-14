@@ -11,12 +11,15 @@ import SuperResolutionKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var imageView: UIImageView!
+    private let imageView = UIImageView(image: nil)
+    @IBOutlet weak var scrollView: UIScrollView!
     
     let input = UIImage(named: "sample.png")!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        scrollView.addSubview(imageView)
+        
         reset(self)
     }
 
@@ -30,6 +33,21 @@ class ViewController: UIViewController {
 
     @IBAction func reset(_ sender: Any) {
         imageView.image = input
+        imageView.sizeToFit()
+    }
+
+    @IBAction func doubleTap(_ sender: Any) {
+        if scrollView.zoomScale == scrollView.minimumZoomScale {
+            scrollView.setZoomScale(scrollView.maximumZoomScale, animated: true)
+        } else {
+            scrollView.setZoomScale(scrollView.minimumZoomScale, animated: true)
+        }
+    }
+}
+
+extension ViewController: UIScrollViewDelegate {
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return imageView
     }
 }
 

@@ -21,9 +21,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T9f-co-TZ9">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="4" translatesAutoresizingMaskIntoConstraints="NO" id="k5S-IV-sDI">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="cNU-8Q-ErA"/>
+                                    <outletCollection property="gestureRecognizers" destination="5Gl-5s-Jfb" appends="YES" id="sAK-3V-y7G"/>
+                                </connections>
+                            </scrollView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="VzB-ik-OEJ">
                                 <rect key="frame" x="32" y="36" width="60" height="122"/>
                                 <subviews>
@@ -57,18 +61,23 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="VzB-ik-OEJ" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="16" id="0cd-zd-L92"/>
-                            <constraint firstAttribute="trailing" secondItem="T9f-co-TZ9" secondAttribute="trailing" id="73T-Ph-5xe"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="T9f-co-TZ9" secondAttribute="bottom" id="Hx6-vy-073"/>
-                            <constraint firstItem="T9f-co-TZ9" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="Jkh-Kh-du0"/>
-                            <constraint firstItem="T9f-co-TZ9" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="ZcM-5o-97x"/>
+                            <constraint firstItem="k5S-IV-sDI" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="6P2-Gc-QbC"/>
+                            <constraint firstAttribute="bottom" secondItem="k5S-IV-sDI" secondAttribute="bottom" id="EyK-ar-tF2"/>
+                            <constraint firstAttribute="trailing" secondItem="k5S-IV-sDI" secondAttribute="trailing" id="jWW-mo-Oqj"/>
+                            <constraint firstItem="k5S-IV-sDI" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="mrL-UR-bxb"/>
                             <constraint firstItem="VzB-ik-OEJ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="16" id="rW1-46-jpx"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="T9f-co-TZ9" id="1tj-2I-8Zh"/>
+                        <outlet property="scrollView" destination="k5S-IV-sDI" id="wm8-4G-1Cx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="5Gl-5s-Jfb">
+                    <connections>
+                        <action selector="doubleTap:" destination="vXZ-lx-hvc" id="mmK-RK-em5"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
