@@ -10,6 +10,8 @@ from os import listdir, makedirs
 from os.path import isfile, join, exists
 from PIL import Image
 
+from s3sync import S3SyncCallback
+
 def model():
     d = 56
     s = 12
@@ -88,6 +90,7 @@ def train(log_dir, model_dir, train_dir, test_dir, eval_img):
     ps_cb = PSNRCallback()
     md_cb = ModelCheckpoint(os.path.join(model_dir,'check.h5'), monitor='val_loss', verbose=1, save_best_only=True, save_weights_only=False, mode='min', period=1)
     tb_cb = TensorBoard(log_dir=log_dir)
+    s3_cb = S3SyncCallback(s3_base_url='s3://tryswift/super-resolution-kit/log', log_dir=log_dir)
 
     srcnn_model.fit_generator(
         generator = train_gen,
@@ -95,7 +98,7 @@ def train(log_dir, model_dir, train_dir, test_dir, eval_img):
         validation_data = val_gen,
         validation_steps = 100,
         epochs = 100,
-        callbacks=[pd_cb, ps_cb, md_cb, tb_cb])
+        callbacks=[pd_cb, ps_cb, md_cb, tb_cb, s3_cb])
 
     srcnn_model.save(os.path.join(model_dir,'model.h5'))
 
