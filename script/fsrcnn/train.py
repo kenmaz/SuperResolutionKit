@@ -10,6 +10,8 @@ from os import listdir, makedirs
 from os.path import isfile, join, exists
 from PIL import Image
 
+import os.path, sys
+sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__)), os.pardir))
 from s3sync import S3SyncCallback
 
 def model(scale = 2):

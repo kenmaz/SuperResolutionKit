@@ -15,9 +15,9 @@ from PIL import Image
 from tqdm import tqdm
 
 scale = float(args.scale)
-label_size = 200
-patch_size = int(label_size/scale)
-stride = 200
+patch_size = 100
+label_size = int(patch_size * scale)
+stride = patch_size
 
 if not exists(args.output_dir):
     makedirs(args.output_dir)
