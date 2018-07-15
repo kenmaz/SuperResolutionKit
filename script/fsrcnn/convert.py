@@ -6,6 +6,7 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument("input_dir", help="Data input directory")
 parser.add_argument("output_dir", help="Data output directory")
+parser.add_argument("-scale", type=int, default=2, help="Scale")
 args = parser.parse_args()
 
 import numpy as np
@@ -13,7 +14,7 @@ from scipy import misc
 from PIL import Image
 from tqdm import tqdm
 
-scale = 2.0
+scale = float(args.scale)
 label_size = 200
 patch_size = int(label_size/scale)
 stride = 200

@@ -12,7 +12,7 @@ from PIL import Image
 
 from s3sync import S3SyncCallback
 
-def model():
+def model(scale = 2):
     d = 56
     s = 12
     m = 4
@@ -27,7 +27,7 @@ def model():
         SRCNN.add(PReLU(shared_axes=[1, 2]))
     SRCNN.add(Conv2D(nb_filter=d, nb_row=1, nb_col=1, init='glorot_uniform', border_mode='same', bias=True))
     SRCNN.add(PReLU(shared_axes=[1, 2]))
-    SRCNN.add(Conv2DTranspose(filters=3, kernel_size=(9,9), strides=(2,2), init='glorot_uniform', border_mode='same', bias=True))
+    SRCNN.add(Conv2DTranspose(filters=3, kernel_size=(9,9), strides=(scale, scale), init='glorot_uniform', border_mode='same', bias=True))
 
     adam = Adam(lr=0.0003)
     SRCNN.compile(optimizer=adam, loss='mean_squared_error', metrics=['mean_squared_error'])
@@ -56,8 +56,8 @@ class MyDataGenerator(object):
         X /= 255.
         return X
 
-def train(log_dir, model_dir, train_dir, test_dir, eval_img):
-    srcnn_model = model()
+def train(log_dir, model_dir, train_dir, test_dir, eval_img, scale):
+    srcnn_model = model(scale)
     print(srcnn_model.summary())
 
     datagen = MyDataGenerator()
@@ -110,10 +110,11 @@ if __name__ == "__main__":
     parser.add_argument("train_dir")
     parser.add_argument("test_dir")
     parser.add_argument("--eval_img")
+    parser.add_argument("-scale", type=int, default=2)
     args = parser.parse_args()
     print(args)
 
     if not exists(args.model_dir):
         makedirs(args.model_dir)
 
-    train(args.log_dir, args.model_dir, args.train_dir, args.test_dir, args.eval_img)
+    train(args.log_dir, args.model_dir, args.train_dir, args.test_dir, args.eval_img, args.scale)
