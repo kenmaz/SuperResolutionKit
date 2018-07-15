@@ -8,6 +8,7 @@ parser.add_argument("input_dir", help="Data input directory")
 parser.add_argument("output_dir", help="Data output directory")
 parser.add_argument("-scale", type=int, default=2, help="Scale")
 args = parser.parse_args()
+print(args)
 
 import numpy as np
 from scipy import misc
