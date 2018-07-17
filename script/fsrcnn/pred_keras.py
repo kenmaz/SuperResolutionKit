@@ -81,14 +81,22 @@ def exec_pred(srcnn_model, img, ba_path, ot_path):
 def run_pred(model, Y):
     return model.predict(Y, batch_size=1) * 255.
 
-def predict2(model, input_file, out_dir):
+def predict2(model, input_file, out_dir, scale = 2.0):
+    basename = os.path.basename(input_file)
+
     img = Image.open(input_file)
-    img = numpy.asarray(img)
-    h,w,c = img.shape
+    lr_size = tuple([int(x/scale) for x in img.size])
+    lr_img = img.resize(lr_size, Image.BICUBIC)
+    lr_img.save('%s/lr_%s' % (out_dir, basename))
+    lr_img = numpy.asarray(lr_img)
+    hr_img = numpy.zeros((img.size[1], img.size[0], 3)) # h<->w exchanged
+    print(hr_img.shape)
+
+    h,w,c = lr_img.shape
     for y in range(0, h, patch_size):
         for x in range(0, w, patch_size):
-            patch = img[y:y+patch_size, x:x+patch_size]
-            save_as_img('lr',out_dir, patch, y, x)
+            patch = lr_img[y:y+patch_size, x:x+patch_size]
+            #save_as_img('lr',out_dir, patch, y, x)
             patch = patch/255.
             patch = patch.reshape(1, patch.shape[0],patch.shape[1],patch.shape[2])
             res = model.predict(patch, batch_size=1)
@@ -96,7 +104,17 @@ def predict2(model, input_file, out_dir):
             res = numpy.clip(res, 0, 255) #important
             res = numpy.uint8(res)
             res = res.reshape(res.shape[1],res.shape[2],res.shape[3])
-            save_as_img('hr',out_dir, res, y, x)
+            #save_as_img('hr',out_dir, res, y, x)
+            dy = int(y * scale)
+            dh = dy + int(patch_size * scale)
+            dx = int(x * scale)
+            dw = dx + int(patch_size * scale)
+            hr_img[dy:dh,dx:dw] = res
+
+    hr_img = numpy.uint8(hr_img)
+    hr_img = Image.fromarray(hr_img)
+    hr_img = hr_img.convert('RGB')
+    hr_img.save('%s/hr_%s' % (out_dir, basename))
 
 def save_as_img(prefix, out_dir, patch, y, x):
     img = Image.fromarray(patch)
