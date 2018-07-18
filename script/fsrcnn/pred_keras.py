@@ -19,75 +19,14 @@ def setup_session():
     session = tf.Session(config=config)
     tensorflow_backend.set_session(session)
 
-def predict(srcnn_model, input_path, out_dir):
-    img = Image.open(input_path)
-    dst = numpy.copy(img)
-    h,w,c = img.shape
-    blk = numpy.zeros((h,w,c))
-    blk[0:h, 0:w, :] = img
-    dst_base = numpy.copy(blk)
-    for y in range(0, h, label_size):
-        for x in range(0, w, label_size):
-            part = blk[y:y+input_size,x:x+input_size]
-            in_path = "out/pred_in/%d-%d.png" % (y,x)
-            ba_path = "out/pred_base/%d-%d.png" % (y,x)
-            ot_path = "out/pred_out/%d-%d.png" % (y,x)
-            #cv2.imwrite(in_path, part)
-
-            base = make_base(part, ba_path, ot_path)
-            dst_base[y:y+input_size,x:x+input_size] = base
-
-            out = exec_pred(srcnn_model, part, ba_path, ot_path)
-            dst[y:y+label_size,x:x+label_size] = out
-    base_path = os.path.join(out_dir, 'base.png')
-    out_path = os.path.join(out_dir, 'out.png')
-    print(base_path, out_path)
-    cv2.imwrite(base_path, dst_base)
-    cv2.imwrite(out_path, dst)
-
-def make_base(img, ba_path, ot_path):
-    h,w,c = img.shape
-    if h < input_size or w < input_size:
-        return
-    img = img.astype(numpy.uint8)
-    shape = img.shape
-    img = cv2.resize(img, (int(shape[1] / 2), int(shape[0] / 2)), cv2.INTER_CUBIC)
-    img = cv2.resize(img, (shape[1], shape[0]), cv2.INTER_CUBIC)
-    return img
-
-def exec_pred(srcnn_model, img, ba_path, ot_path):
-    h,w,c = img.shape
-    if h < input_size or w < input_size:
-        return
-    img = img.astype(numpy.uint8)
-    shape = img.shape
-    img = cv2.resize(img, (int(shape[1] / 2), int(shape[0] / 2)), cv2.INTER_CUBIC)
-    img = cv2.resize(img, (shape[1], shape[0]), cv2.INTER_CUBIC)
-    cv2.imwrite(ba_path, img)
-
-    Y = numpy.zeros((1, img.shape[0], img.shape[1], c), dtype=float)
-    Y[0] = img.astype(float) / 255.
-    #print(Y.shape)
-    pre = run_pred(srcnn_model, Y)
-    #print('pred_shape', pre.shape)
-    pre[pre[:] > 255] = 255
-    pre[pre[:] < 0] = 0
-    pre = pre.astype(numpy.uint8)
-    #img[6: -6, 6: -6] = pre[0]
-    #img = img[6:-6, 6:-6]
-    #cv2.imwrite(ot_path, img)
-    return pre 
-
-def run_pred(model, Y):
-    return model.predict(Y, batch_size=1) * 255.
-
 def predict2(model, input_file, out_dir, scale = 2.0):
     basename = os.path.basename(input_file)
+    filename, ext = os.path.splitext(basename)
 
     img = Image.open(input_file)
     lr_size = tuple([int(x/scale) for x in img.size])
     lr_img = img.resize(lr_size, Image.BICUBIC)
-    lr_img.save('%s/lr_%s' % (out_dir, basename))
+    lr_img.resize(img.size, Image.BICUBIC).save('%s/%s_lr%s' % (out_dir, filename, ext))
     lr_img = numpy.asarray(lr_img)
     hr_img = numpy.zeros((img.size[1], img.size[0], 3)) # h<->w exchanged
     print(hr_img.shape)
@@ -114,7 +53,7 @@ def predict2(model, input_file, out_dir, scale = 2.0):
     hr_img = numpy.uint8(hr_img)
     hr_img = Image.fromarray(hr_img)
     hr_img = hr_img.convert('RGB')
-    hr_img.save('%s/hr_%s' % (out_dir, basename))
+    hr_img.save('%s/%s_hr%s' % (out_dir, filename, ext))
 
 def save_as_img(prefix, out_dir, patch, y, x):
     img = Image.fromarray(patch)
@@ -133,7 +72,7 @@ if __name__ == "__main__":
     if not os.path.exists(args.out_dir):
         os.makedirs(args.out_dir)
 
-    #setup_session()
+    setup_session()
     model = load_model(args.model)
 
     predict2(model, args.input, args.out_dir)
