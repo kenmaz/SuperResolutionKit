@@ -24,12 +24,17 @@ def predict2(model, input_file, out_dir, scale = 2.0):
     filename, ext = os.path.splitext(basename)
 
     img = Image.open(input_file)
+    img = img.convert('RGB')
+    img.save('%s/%s_1_org%s' % (out_dir, filename, ext))
+
     lr_size = tuple([int(x/scale) for x in img.size])
     lr_img = img.resize(lr_size, Image.BICUBIC)
-    lr_img.resize(img.size, Image.BICUBIC).save('%s/%s_lr%s' % (out_dir, filename, ext))
+    lr_img.resize(img.size, Image.BICUBIC).save('%s/%s_3_lr%s' % (out_dir, filename, ext))
+
     lr_img = numpy.asarray(lr_img)
     hr_img = numpy.zeros((img.size[1], img.size[0], 3)) # h<->w exchanged
     print(hr_img.shape)
+    print(lr_img.shape)
 
     h,w,c = lr_img.shape
     for y in range(0, h, patch_size):
@@ -53,7 +58,7 @@ def predict2(model, input_file, out_dir, scale = 2.0):
     hr_img = numpy.uint8(hr_img)
     hr_img = Image.fromarray(hr_img)
     hr_img = hr_img.convert('RGB')
-    hr_img.save('%s/%s_hr%s' % (out_dir, filename, ext))
+    hr_img.save('%s/%s_2_hr%s' % (out_dir, filename, ext))
 
 def save_as_img(prefix, out_dir, patch, y, x):
     img = Image.fromarray(patch)
