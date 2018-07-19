@@ -37,10 +37,18 @@ def predict2(model, input_file, out_dir, scale = 2.0):
     print(lr_img.shape)
 
     h,w,c = lr_img.shape
+    eh = h if h % patch_size == 0 else h + patch_size - (h % patch_size) # 240 % 100=40, 240+100-
+    ew = w if w % patch_size == 0 else w + patch_size - (w % patch_size)
+    print('extend:',eh,ew,c)
+    lr_base = numpy.zeros((eh, ew, 3), dtype='uint8')
+    lr_base[0:h, 0:w] = lr_img
+    lr_img = lr_base
+    hr_img = numpy.zeros((int(eh * scale), int(ew * scale), 3)) # h<->w exchanged
+
     for y in range(0, h, patch_size):
         for x in range(0, w, patch_size):
             patch = lr_img[y:y+patch_size, x:x+patch_size]
-            #save_as_img('lr',out_dir, patch, y, x)
+            save_as_img('lr',out_dir, patch, y, x)
             patch = patch/255.
             patch = patch.reshape(1, patch.shape[0],patch.shape[1],patch.shape[2])
             res = model.predict(patch, batch_size=1)
@@ -48,7 +56,7 @@ def predict2(model, input_file, out_dir, scale = 2.0):
             res = numpy.clip(res, 0, 255) #important
             res = numpy.uint8(res)
             res = res.reshape(res.shape[1],res.shape[2],res.shape[3])
-            #save_as_img('hr',out_dir, res, y, x)
+            save_as_img('hr',out_dir, res, y, x)
             dy = int(y * scale)
             dh = dy + int(patch_size * scale)
             dx = int(x * scale)
@@ -58,6 +66,9 @@ def predict2(model, input_file, out_dir, scale = 2.0):
     hr_img = numpy.uint8(hr_img)
     hr_img = Image.fromarray(hr_img)
     hr_img = hr_img.convert('RGB')
+    h,w,c = numpy.asarray(img).shape
+    hr_img = numpy.asarray(hr_img)[0:h,0:w]
+    hr_img = Image.fromarray(hr_img)
     hr_img.save('%s/%s_2_hr%s' % (out_dir, filename, ext))
 
 def save_as_img(prefix, out_dir, patch, y, x):
