@@ -15,19 +15,20 @@ class JST(tzinfo):
 
 class S3SyncCallback(Callback):
 
-    def __init__(self, s3_base_url, log_dir, interval_epochs = 10):
+    def __init__(self, s3_base_url, log_dir, interval_epochs = 10, sync = False):
         target = datetime.datetime.now(tz=JST()).strftime('%Y%m%d_%H%M%S')
         self.s3_url = '%s/%s' % (s3_base_url, target)
         self.log_dir = log_dir
         self.interval_epochs = interval_epochs
+        self.sync = sync
         print('s3 sync: %s, interval %d' % (self.s3_url, self.interval_epochs))
 
     def on_epoch_end(self, epoch, logs=None):
-        if epoch > 0 and epoch % self.interval_epochs == 0:
+        if self.sync and epoch > 0 and epoch % self.interval_epochs == 0:
             print('s3 sync..')
-            self.sync()
+            self.exec_sync()
 
-    def sync(self):
+    def exec_sync(self):
         cmd = "aws s3 sync %s %s" % (self.log_dir, self.s3_url)
         print cmd
         res = (os.system(cmd) == 0)
