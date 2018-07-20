@@ -15,12 +15,13 @@ sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__)), os.par
 from s3sync import S3SyncCallback
 
 def model(scale = 2):
+    ch = 1
     d = 56
     s = 12
     m = 4
     c = 3
     SRCNN = Sequential()
-    SRCNN.add(Conv2D(nb_filter=d, nb_row=5, nb_col=5, init='glorot_uniform', border_mode='same', bias=True, input_shape=(100, 100, 3)))
+    SRCNN.add(Conv2D(nb_filter=d, nb_row=5, nb_col=5, init='glorot_uniform', border_mode='same', bias=True, input_shape=(100, 100, ch)))
     SRCNN.add(PReLU(shared_axes=[1, 2]))
     SRCNN.add(Conv2D(nb_filter=s, nb_row=1, nb_col=1, init='glorot_uniform', border_mode='same', bias=True))
     SRCNN.add(PReLU(shared_axes=[1, 2]))
@@ -29,7 +30,7 @@ def model(scale = 2):
         SRCNN.add(PReLU(shared_axes=[1, 2]))
     SRCNN.add(Conv2D(nb_filter=d, nb_row=1, nb_col=1, init='glorot_uniform', border_mode='same', bias=True))
     SRCNN.add(PReLU(shared_axes=[1, 2]))
-    SRCNN.add(Conv2DTranspose(filters=3, kernel_size=(9,9), strides=(scale, scale), init='glorot_uniform', border_mode='same', bias=True))
+    SRCNN.add(Conv2DTranspose(filters=ch, kernel_size=(9,9), strides=(scale, scale), init='glorot_uniform', border_mode='same', bias=True))
 
     adam = Adam(lr=0.0003)
     SRCNN.compile(optimizer=adam, loss='mean_squared_error', metrics=['mean_squared_error'])
@@ -54,8 +55,11 @@ class MyDataGenerator(object):
                     yield x_inputs, x_labels
 
     def load_image(self, src_dir, f):
-        X = np.asarray(Image.open(join(src_dir, f)).convert('RGB'), dtype='float32')
+        img = Image.open(join(src_dir, f))
+        X = np.asarray(img.convert('YCbCr'), dtype='float32')
+        X = X[:,:,0]
         X /= 255.
+        X = np.reshape(X,(X.shape[0], X.shape[1], 1))
         return X
 
 def train(log_dir, model_dir, train_dir, test_dir, eval_img, scale, epochs, steps, sync_s3):
