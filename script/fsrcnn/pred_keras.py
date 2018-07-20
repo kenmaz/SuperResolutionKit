@@ -9,8 +9,6 @@ from keras.models import load_model
 from PIL import Image
 
 patch_size = 100
-input_size = 200
-label_size = 200
 
 def setup_session():
     import tensorflow as tf
@@ -24,8 +22,8 @@ def predict2(model, input_file, out_dir, scale = 2.0, ch = 1):
     filename, ext = os.path.splitext(basename)
 
     img = Image.open(input_file)
-    img = img.convert('YCbCr')
     img.save('%s/%s_org%s' % (out_dir, filename, ext))
+    img = img.convert('YCbCr')
 
     yuv = np.asarray(img)
     y_img = yuv[:,:,0]
@@ -35,7 +33,7 @@ def predict2(model, input_file, out_dir, scale = 2.0, ch = 1):
 
     lr_size = tuple([int(x/scale) for x in img.size])
     lr_img = img.resize(lr_size, Image.BICUBIC)
-    lr_img.resize(img.size, Image.BICUBIC).save('%s/%s_lr%s' % (out_dir, filename, ext))
+    lr_img.resize(img.size, Image.BICUBIC).convert('RGB').save('%s/%s_lr%s' % (out_dir, filename, ext))
 
     ylr_img = np.asarray(lr_img)[:,:,0]
     ylr_img = np.uint8(ylr_img)
@@ -89,6 +87,7 @@ def merge_save(dst_path, yuv, y):
     dst = yuv.copy()
     dst[:,:,0] = y
     img = Image.fromarray(dst, mode='YCbCr')
+    img = img.convert('RGB')
     img.save(dst_path)
 
 def save_as_img(prefix, out_dir, patch, y, x):
@@ -103,6 +102,7 @@ if __name__ == "__main__":
     parser.add_argument("model", help="model file path")
     parser.add_argument("input", help="row res image path")
     parser.add_argument("out_dir", help="output dir")
+    parser.add_argument("-scale", type=int, default=2)
     args = parser.parse_args()
     print(args)
 
@@ -112,5 +112,5 @@ if __name__ == "__main__":
     setup_session()
     model = load_model(args.model)
 
-    predict2(model, args.input, args.out_dir)
+    predict2(model, args.input, args.out_dir, args.scale)
     print('fin')
