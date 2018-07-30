@@ -4,35 +4,36 @@ import numpy as np
 from scipy import misc
 from PIL import Image
 
-def execute(input_dir, output_dir):
-    scale = 2.0
-    input_size = 200
-    label_size = 200
-    stride = 200
+class Converter(object):
+    def execute(self, input_dir, output_dir):
+        scale = 2.0
+        input_size = 200
+        label_size = 200
+        stride = 200
 
-    count = 1
-    for f in listdir(input_dir):
-        f = join(input_dir, f)
-        if not isfile(f):
-            continue
+        count = 1
+        for f in listdir(input_dir):
+            f = join(input_dir, f)
+            if not isfile(f):
+                continue
 
-        image = np.asarray(Image.open(f).convert('RGB'))
-        print(f, image.shape)
+            image = np.asarray(Image.open(f).convert('RGB'))
+            print(f, image.shape)
 
-        h, w, c = image.shape
+            h, w, c = image.shape
 
-        scaled = misc.imresize(image, 1.0/scale, 'bicubic')
-        scaled = misc.imresize(scaled, scale/1.0, 'bicubic')
+            scaled = misc.imresize(image, 1.0/scale, 'bicubic')
+            scaled = misc.imresize(scaled, scale/1.0, 'bicubic')
 
-        for y in range(0, h - input_size + 1, stride):
-            for x in range(0, w - input_size + 1, stride):
-                print(y,x)
-                sub_img = scaled[y : y + input_size, x : x + input_size]
-                sub_img_label = image[y : y + label_size, x : x + label_size]
-                misc.imsave(join(output_dir, "input", str(count) + '.png'), sub_img)
-                misc.imsave(join(output_dir, "label", str(count) + '.png'), sub_img_label)
+            for y in range(0, h - input_size + 1, stride):
+                for x in range(0, w - input_size + 1, stride):
+                    print(y,x)
+                    sub_img = scaled[y : y + input_size, x : x + input_size]
+                    sub_img_label = image[y : y + label_size, x : x + label_size]
+                    misc.imsave(join(output_dir, "input", str(count) + '.png'), sub_img)
+                    misc.imsave(join(output_dir, "label", str(count) + '.png'), sub_img_label)
 
-                count += 1
+                    count += 1
 
 if __name__ == "__main__":
     import argparse
@@ -48,4 +49,5 @@ if __name__ == "__main__":
     if not exists(join(args.output_dir, "label")):
         makedirs(join(args.output_dir, "label"))
 
-    execute(args.input_dir, args.output_dir)
+    converter = Converter()
+    converter.execute(args.input_dir, args.output_dir)
