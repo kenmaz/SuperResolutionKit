@@ -48,4 +48,4 @@ if __name__ == "__main__":
     if not exists(join(args.output_dir, "label")):
         makedirs(join(args.output_dir, "label"))
 
-    execute(args)
+    execute(args.input_dir, args.output_dir)
