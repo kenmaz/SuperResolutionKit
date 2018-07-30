@@ -4,22 +4,15 @@ import numpy as np
 from scipy import misc
 from PIL import Image
 
-def execute(args):
+def execute(input_dir, output_dir):
     scale = 2.0
     input_size = 200
     label_size = 200
     stride = 200
 
-    if not exists(args.output_dir):
-        makedirs(args.output_dir)
-    if not exists(join(args.output_dir, "input")):
-        makedirs(join(args.output_dir, "input"))
-    if not exists(join(args.output_dir, "label")):
-        makedirs(join(args.output_dir, "label"))
-
     count = 1
-    for f in listdir(args.input_dir):
-        f = join(args.input_dir, f)
+    for f in listdir(input_dir):
+        f = join(input_dir, f)
         if not isfile(f):
             continue
 
@@ -36,8 +29,8 @@ def execute(args):
                 print(y,x)
                 sub_img = scaled[y : y + input_size, x : x + input_size]
                 sub_img_label = image[y : y + label_size, x : x + label_size]
-                misc.imsave(join(args.output_dir, "input", str(count) + '.png'), sub_img)
-                misc.imsave(join(args.output_dir, "label", str(count) + '.png'), sub_img_label)
+                misc.imsave(join(output_dir, "input", str(count) + '.png'), sub_img)
+                misc.imsave(join(output_dir, "label", str(count) + '.png'), sub_img_label)
 
                 count += 1
 
@@ -47,4 +40,12 @@ if __name__ == "__main__":
     parser.add_argument("input_dir", help="Data input directory")
     parser.add_argument("output_dir", help="Data output directory")
     args = parser.parse_args()
+
+    if not exists(args.output_dir):
+        makedirs(args.output_dir)
+    if not exists(join(args.output_dir, "input")):
+        makedirs(join(args.output_dir, "input"))
+    if not exists(join(args.output_dir, "label")):
+        makedirs(join(args.output_dir, "label"))
+
     execute(args)
