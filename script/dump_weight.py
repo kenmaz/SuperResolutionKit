@@ -39,13 +39,14 @@ def dump_weight(model, out_dir):
     dist_img = Image.new('L', grid_size)
     print grid_layout
 
+    baseline = abs(min(w.flatten().tolist()))
+    w = w + baseline
+    topval = max(w.flatten().tolist())
+    w = w / topval * 255
+    w = np.uint8(w)
+
     for c in range(0, ch):
         mask = w[:,:,0,c]
-        baseline = abs(min(mask.flatten().tolist()))
-        mask = mask + baseline
-        topval = max(mask.flatten().tolist())
-        mask = mask / baseline * 255
-        mask = np.uint8(mask)
         #save_as_img('weight-%d'%c, out_dir, mask)
         img = Image.fromarray(mask)
         x = int(c/grid_layout[1])
