@@ -22,12 +22,7 @@ def save_as_img(prefix, out_dir, patch):
     img.save(path)
 
 def dump_weight(model, out_dir):
-    weights = model.get_weights()
-    print len(weights),'weights'
-    for w in weights:
-        print(w.shape)
-
-    print('1st layer masks')
+    weights = model.get_layer('conv2d_1').get_weights()
     w = weights[0]
     ch = w.shape[3]
     patch_size = w.shape[0]
@@ -39,20 +34,25 @@ def dump_weight(model, out_dir):
     dist_img = Image.new('L', grid_size)
     print grid_layout
 
-    baseline = abs(min(w.flatten().tolist()))
-    w = w + baseline
-    topval = max(w.flatten().tolist())
-    w = w / topval * 255
-    w = np.uint8(w)
-
     for c in range(0, ch):
         mask = w[:,:,0,c]
+
+        print weights[1][c]
+
+        w1 = mask
+        baseline = abs(min(w1.flatten().tolist()))
+        w1 = w1 + baseline
+        topval = max(w1.flatten().tolist())
+        w1 = w1 / topval * 255
+        w1 = np.uint8(w1)
+        mask = w1
+
         #save_as_img('weight-%d'%c, out_dir, mask)
         img = Image.fromarray(mask)
         x = int(c/grid_layout[1])
         y = int(c%grid_layout[1])
         pos = (x*patch_size + x*space, y*patch_size + y*space)
-        print(pos)
+        #print(pos)
         dist_img.paste(img, pos)
 
     path = '%s/weights.png' % out_dir

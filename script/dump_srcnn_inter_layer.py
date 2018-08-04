@@ -51,9 +51,18 @@ def dump_intermediate_layer(layer_name, model, patch, out_dir):
 
     for ch in range(0, num_ch):
         res = dump[0,:,:,ch]
-        res = res*255.
-        res = np.clip(res, 0, 255) #important
-        res = np.uint8(res)
+
+        w1 = res
+        baseline = abs(min(w1.flatten().tolist()))
+        w1 = w1 + baseline
+        topval = max(w1.flatten().tolist())
+        w1 = w1 / topval * 255
+        w1 = np.uint8(w1)
+        res = w1
+
+        #res = res*255.
+        #res = np.clip(res, 0, 255) #important
+        #res = np.uint8(res)
         img = Image.fromarray(res)
         pos = (int(ch/grid_layout[1])*patch_size, int(ch%grid_layout[1])*patch_size)
         dist_img.paste(img, pos)
