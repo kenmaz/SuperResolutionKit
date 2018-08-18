@@ -13,7 +13,7 @@ class MangaViewController: UIViewController {
     private let pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
     
     private var pageVCs: [UIViewController] = []
-    private var token: String = ""
+    private var currentPid: String = ""
     
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var loadingView: UIView!
@@ -69,8 +69,8 @@ class MangaViewController: UIViewController {
     }
     
     private func process(execute:(_: @escaping ()->Void)->Void) {
-        let privateToken = UUID().uuidString
-        token = privateToken
+        let pid = UUID().uuidString
+        currentPid = pid
         
         loadingView.isHidden = false
         loadingIndicator.isHidden = false
@@ -81,7 +81,7 @@ class MangaViewController: UIViewController {
             self?.loadingIndicator.isHidden = true
             self?.loadingLabel.text = String(format: "Done: %.2f sec", elapsed)
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3, execute: {
-                if self?.token == privateToken {
+                if self?.currentPid == pid {
                     self?.loadingView.isHidden = true
                 }
             })
