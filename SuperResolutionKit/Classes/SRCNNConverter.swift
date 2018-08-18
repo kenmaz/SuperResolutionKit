@@ -130,7 +130,7 @@ public class SRCNNConverter {
     }
     
     public func convert(from src: UIImage) -> UIImage? {
-        print("start")
+        mesure("start SRCNN",0)
         let t = Date()
         
         /////////////
@@ -138,7 +138,7 @@ public class SRCNNConverter {
             return nil
         }
         let t0 = Date()
-        print("resize: \(t0.timeIntervalSince(t))")
+        mesure("resize",t0.timeIntervalSince(t))
 
         /////////////
         guard let expanded = expand(src: resized) else {
@@ -146,28 +146,30 @@ public class SRCNNConverter {
         }
         
         let t1 = Date()
-        print("expand: \(t1.timeIntervalSince(t0))")
+        mesure("expand",t1.timeIntervalSince(t0))
         
         /////////////
         let patches = crop(src: expanded)
 
         let t2 = Date()
-        print("crop: \(t2.timeIntervalSince(t1))")
+        mesure("crop",t2.timeIntervalSince(t1))
         
         /////////////
         let outPatches = predict(patches: patches)
 
         let t3 = Date()
-        print("predict: \(t3.timeIntervalSince(t2))")
+        mesure("predict",t3.timeIntervalSince(t2))
         /////////////
         let res = render(patches: outPatches, size: resized.size)
         
         let t4 = Date()
-        print("render: \(t4.timeIntervalSince(t3))")
+        mesure("render",t4.timeIntervalSince(t3))
         /////////////
         
-        print("total: \(t4.timeIntervalSince(t))")
+        mesure("total",t4.timeIntervalSince(t))
         return res
-
+    }
+    private func mesure(_ msg: String, _ time: TimeInterval) {
+        print(String(format: "\(msg):\t%.2f", time))
     }
 }

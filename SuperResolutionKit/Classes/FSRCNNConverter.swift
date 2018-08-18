@@ -131,26 +131,26 @@ public class FSRCNNConverter {
     }
     
     public func convert(from src: UIImage) -> UIImage? {
-        print("start")
+        mesure("start Fast-SRCNN",0)
         let t = Date()
         
         let t0 = Date()
-        print("resize: \(t0.timeIntervalSince(t))")
+        mesure("resize", t0.timeIntervalSince(t))
         
         let t1 = Date()
-        print("expand: \(t1.timeIntervalSince(t0))")
+        mesure("expand",t1.timeIntervalSince(t0))
         
         /////////////
         let patches = crop(src: src)
         
         let t2 = Date()
-        print("crop: \(t2.timeIntervalSince(t1))")
+        mesure("crop",t2.timeIntervalSince(t1))
         
         /////////////
         let outPatches = predict(patches: patches)
         
         let t3 = Date()
-        print("predict: \(t3.timeIntervalSince(t2))")
+        mesure("predict",t3.timeIntervalSince(t2))
         /////////////
         var size = src.size
         size.width *= 2
@@ -158,11 +158,13 @@ public class FSRCNNConverter {
         let res = render(patches: outPatches, size: size)
         
         let t4 = Date()
-        print("render: \(t4.timeIntervalSince(t3))")
+        mesure("render",t4.timeIntervalSince(t3))
         /////////////
         
-        print("total: \(t4.timeIntervalSince(t))")
+        mesure("total",t4.timeIntervalSince(t))
         return res
-        
+    }
+    private func mesure(_ msg: String, _ time: TimeInterval) {
+        print(String(format: "\(msg):\t%.2f", time))
     }
 }
