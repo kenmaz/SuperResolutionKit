@@ -57,26 +57,18 @@ class MangaViewController: UIViewController {
         currentViewController.reset(sender)
     }
     @IBAction func action1DidTap(_ sender: Any) {
-        let privateToken = UUID().uuidString
-        token = privateToken
-
-        loadingView.isHidden = false
-        loadingIndicator.isHidden = false
-        loadingLabel.text = "Prosessing..."
-        let start = Date()
-        currentViewController.imageView.setSRImage(image: currentViewController.image!, completion: { [weak self] in
-            let elapsed = Date().timeIntervalSince(start)
-            self?.loadingIndicator.isHidden = true
-            self?.loadingLabel.text = String(format: "Done: %.2f", elapsed)
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3, execute: {
-                if self?.token == privateToken {
-                    self?.loadingView.isHidden = true
-                }
-            })
-        })
+        process { (completion) in
+            currentViewController.imageView.setSRImage(image: currentViewController.image!, completion: completion)
+        }
     }
     
     @IBAction func action2DidTap(_ sender: Any) {
+        process { (completion) in
+            currentViewController.imageView.setFSRImage(image: currentViewController.image!, completion: completion)
+        }
+    }
+    
+    private func process(execute:(_: @escaping ()->Void)->Void) {
         let privateToken = UUID().uuidString
         token = privateToken
         
@@ -84,7 +76,7 @@ class MangaViewController: UIViewController {
         loadingIndicator.isHidden = false
         loadingLabel.text = "Prosessing..."
         let start = Date()
-        currentViewController.imageView.setFSRImage(image: currentViewController.image!, completion: { [weak self] in
+        execute() { [weak self] in
             let elapsed = Date().timeIntervalSince(start)
             self?.loadingIndicator.isHidden = true
             self?.loadingLabel.text = String(format: "Done: %.2f sec", elapsed)
@@ -93,7 +85,7 @@ class MangaViewController: UIViewController {
                     self?.loadingView.isHidden = true
                 }
             })
-        })
+        }
     }
 }
 
