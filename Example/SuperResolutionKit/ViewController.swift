@@ -11,28 +11,36 @@ import SuperResolutionKit
 
 class ViewController: UIViewController {
 
-    private let imageView = UIImageView(image: nil)
-    @IBOutlet weak var scrollView: UIScrollView!
+    var image: UIImage? = nil
+    let imageView = UIImageView(image: nil)
     
-    let input = UIImage(named: "sample.png")!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.addSubview(imageView)
         
         reset(self)
+        imageView.sizeToFit()
+        imageView.frame.origin.y = 100
+
+        if let size = image?.size {
+            let ratio = view.frame.size.width / size.width
+            scrollView.minimumZoomScale = ratio
+            scrollView.setZoomScale(ratio, animated: false)
+        }
     }
 
-    @IBAction func runSR(_ sender: Any) {
-        imageView.setSRImage(image: input)
+    func runSR(_ sender: Any) {
+        imageView.setSRImage(image: image!)
     }
     
-    @IBAction func runFSR(_ sender: Any) {
-        imageView.setFSRImage(image: input)
+    func runFSR(_ sender: Any) {
+        imageView.setFSRImage(image: image!)
     }
 
-    @IBAction func reset(_ sender: Any) {
-        imageView.image = input
+    func reset(_ sender: Any) {
+        imageView.image = image
         imageView.sizeToFit()
     }
 
