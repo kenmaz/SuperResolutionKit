@@ -26,7 +26,7 @@ This is a super resolution implementation with Keras/CoreML
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'kenmaz' => 'kentaro.matsumae@gmail.com' }
   s.source           = { :git => 'https://github.com/kenmaz/SuperResolutionKit.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.social_media_url = 'https://twitter.com/kenmaz'
 
   s.ios.deployment_target = '11.0'
   s.swift_version = '4.1'
