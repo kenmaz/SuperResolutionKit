@@ -15,6 +15,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		743BED3D6851CDFD2EE77974 /* Pods_SuperResolutionKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41BC40EE0FA3DBCFE9A6EEA4 /* Pods_SuperResolutionKit_Tests.framework */; };
+		8A466FFE213447CA00DCC2B8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		8AAA82A42128227400FC7366 /* MangaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAA82A32128227400FC7366 /* MangaViewController.swift */; };
 		8AE567BC212836D300980B18 /* 01bj-page13.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8AE567B3212836D300980B18 /* 01bj-page13.jpg */; };
 		8AE567BD212836D300980B18 /* 01bj-page9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8AE567B4212836D300980B18 /* 01bj-page9.jpg */; };
@@ -304,6 +305,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A466FFE213447CA00DCC2B8 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
