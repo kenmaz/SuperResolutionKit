@@ -39,7 +39,7 @@ class ListViewController: UITableViewController {
         let images: [UIImage]
         switch title {
         case .blackJack:
-            images = [#imageLiteral(resourceName: "01bj-page7.jpg"),#imageLiteral(resourceName: "01bj-page8.jpg"),#imageLiteral(resourceName: "01bj-page9.jpg"),#imageLiteral(resourceName: "01bj-page10.jpg"),#imageLiteral(resourceName: "01bj-page11.jpg"),#imageLiteral(resourceName: "01bj-page12.jpg"),#imageLiteral(resourceName: "01bj-page13.jpg"),#imageLiteral(resourceName: "01bj-page14.jpg"),#imageLiteral(resourceName: "01bj-page15.jpg")]
+            images = [#imageLiteral(resourceName: "01bj-page7.jpg"),#imageLiteral(resourceName: "01bj-page11.jpg"),#imageLiteral(resourceName: "01bj-page10.jpg"),#imageLiteral(resourceName: "01bj-page12.jpg"),#imageLiteral(resourceName: "01bj-page13.jpg"),#imageLiteral(resourceName: "01bj-page14.jpg"),#imageLiteral(resourceName: "01bj-page9.jpg"),#imageLiteral(resourceName: "01bj-page8.jpg"),#imageLiteral(resourceName: "01bj-page15.jpg")]
         case .penki:
             images = [#imageLiteral(resourceName: "p10.png"),#imageLiteral(resourceName: "p9.png"),#imageLiteral(resourceName: "p8.png"),#imageLiteral(resourceName: "p3.png"),#imageLiteral(resourceName: "p2.png"),#imageLiteral(resourceName: "p1.png"),#imageLiteral(resourceName: "p5.png"),#imageLiteral(resourceName: "p4.png"),#imageLiteral(resourceName: "p6.png"),#imageLiteral(resourceName: "p7.png")]
         }
