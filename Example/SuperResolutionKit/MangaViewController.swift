@@ -10,6 +10,8 @@ import UIKit
 
 class MangaViewController: UIViewController {
     
+    var images: [UIImage] = []
+    
     private let pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
     
     private var pageVCs: [UIViewController] = []
@@ -21,21 +23,10 @@ class MangaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         loadingView.isHidden = true
         
-        let imgs = [
-            #imageLiteral(resourceName: "01bj-page7.jpg"),
-            #imageLiteral(resourceName: "01bj-page8.jpg"),
-            #imageLiteral(resourceName: "01bj-page9.jpg"),
-            #imageLiteral(resourceName: "01bj-page10.jpg"),
-            #imageLiteral(resourceName: "01bj-page11.jpg"),
-            #imageLiteral(resourceName: "01bj-page12.jpg"),
-            #imageLiteral(resourceName: "01bj-page13.jpg"),
-            #imageLiteral(resourceName: "01bj-page14.jpg"),
-            #imageLiteral(resourceName: "01bj-page15.jpg")]
-            
-        self.pageVCs = imgs.map {
+        self.pageVCs = images.map {
             let vc = self.storyboard!.instantiateViewController(withIdentifier: "View") as! ViewController
             vc.image = $0
             return vc
@@ -53,9 +44,14 @@ class MangaViewController: UIViewController {
         return pageViewController.viewControllers?.first as! ViewController
     }
     
+    @IBAction func closeButtonDidTap(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func resetDidTap(_ sender: Any) {
         currentViewController.reset(sender)
     }
+    
     @IBAction func action1DidTap(_ sender: Any) {
         process { (completion) in
             currentViewController.imageView.setSRImage(image: currentViewController.image!, completion: completion)

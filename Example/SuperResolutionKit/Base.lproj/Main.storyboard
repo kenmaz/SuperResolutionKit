@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qBr-vi-0fz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Aja-5R-yAA">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -50,10 +50,55 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tjO-oT-23q">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="64i-D8-TW8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="Aja-5R-yAA" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7YG-Ea-gOr">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="JNn-Zs-po0" kind="relationship" relationship="rootViewController" id="QyN-mr-jTm"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-2252" y="134"/>
+        </scene>
+        <!--List View Controller-->
+        <scene sceneID="Vbr-00-Knd">
+            <objects>
+                <tableViewController id="JNn-Zs-po0" customClass="ListViewController" customModule="SuperResolutionKit_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="zB8-N8-nUW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Zfk-qc-Nr0">
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zfk-qc-Nr0" id="F06-KN-wDu">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="JNn-Zs-po0" id="WUd-OE-9Fd"/>
+                            <outlet property="delegate" destination="JNn-Zs-po0" id="P9g-pJ-LRJ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="LCp-Bc-KTo"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tAo-T8-8w3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1417" y="134"/>
+        </scene>
         <!--Manga View Controller-->
         <scene sceneID="2Uv-OD-IJd">
             <objects>
-                <viewController id="qBr-vi-0fz" customClass="MangaViewController" customModule="SuperResolutionKit_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MangaViewController" id="qBr-vi-0fz" customClass="MangaViewController" customModule="SuperResolutionKit_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ted-lw-9lw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -61,7 +106,18 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qLV-J3-2yq">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem title="reset" id="Ltu-qg-JQg">
+                                    <barButtonItem style="plain" id="hRb-P0-2NX">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3cO-uq-flm">
+                                            <rect key="frame" x="16" y="7" width="39" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Close"/>
+                                            <connections>
+                                                <action selector="closeButtonDidTap:" destination="qBr-vi-0fz" eventType="touchUpInside" id="tgo-zB-eO4"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="8MQ-n1-SUw"/>
+                                    <barButtonItem title="Reset" id="Ltu-qg-JQg">
                                         <connections>
                                             <action selector="resetDidTap:" destination="qBr-vi-0fz" id="qjc-ty-PPh"/>
                                         </connections>
@@ -114,6 +170,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Prz-ra-hWr"/>
                     </view>
+                    <navigationItem key="navigationItem" id="joX-G9-qNp"/>
                     <connections>
                         <outlet property="loadingIndicator" destination="d12-GD-DKP" id="3Ui-G7-aXn"/>
                         <outlet property="loadingLabel" destination="oCa-NH-HvM" id="bmb-0m-TXB"/>
@@ -122,7 +179,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gyn-I8-Vgy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-698.39999999999998" y="133.5832083958021"/>
+            <point key="canvasLocation" x="-644" y="134"/>
         </scene>
     </scenes>
 </document>
