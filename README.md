@@ -21,7 +21,11 @@ pod 'SuperResolutionKit'
 ## Usage
 
 ```swift
+// Using SRCNN
 imageView.setSRImage(image: image)
+
+// Using F-SRCNN (faster)
+imageView.setFSRImage(image: image)
 ```
 
 ## Author
