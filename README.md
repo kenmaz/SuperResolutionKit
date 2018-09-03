@@ -5,9 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/SuperResolutionKit.svg?style=flat)](https://cocoapods.org/pods/SuperResolutionKit)
 [![Platform](https://img.shields.io/cocoapods/p/SuperResolutionKit.svg?style=flat)](https://cocoapods.org/pods/SuperResolutionKit)
 
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+Super resolution implementation with CoreML and Keras.
 
 ## Requirements
 
@@ -18,6 +16,12 @@ it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'SuperResolutionKit'
+```
+
+## Usage
+
+```swift
+imageView.setSRImage(image: image)
 ```
 
 ## Author
