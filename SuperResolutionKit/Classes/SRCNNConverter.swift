@@ -15,8 +15,12 @@ public class SRCNNConverter {
 
     private let patchInSize = 200
     private let patchOutSize = 200
-    private let model = SRCNN(modelName: "SRCNN")
+    private let model: SRCNN
 
+    public init(modelName: String = "SRCNN") {
+        model = SRCNN(modelName: modelName)
+    }
+    
     private func resize2x(src: UIImage) -> UIImage? {
         let w = src.size.width
         let h = src.size.height

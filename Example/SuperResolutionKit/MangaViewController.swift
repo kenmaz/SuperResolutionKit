@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SuperResolutionKit
 
 class MangaViewController: UIViewController {
     
@@ -58,6 +59,25 @@ class MangaViewController: UIViewController {
         }
     }
     
+    @IBAction func action1CDidTap(_ sender: Any) {
+        process {[weak self] (completion) in
+            let imageView = self!.currentViewController.imageView
+            let src = self!.currentViewController.image!
+            imageView.image = src
+            
+            DispatchQueue.global().async {
+                let converter = SRCNNConverter(modelName: "SRCNN-photo")
+                if let output = converter.convert(from: src) {
+                    DispatchQueue.main.async {
+                        imageView.image = output
+                        imageView.layer.add(CATransition(), forKey: nil)
+                        completion()
+                    }
+                }
+            }
+        }
+    }
+
     @IBAction func action2DidTap(_ sender: Any) {
         process { (completion) in
             currentViewController.imageView.setFSRImage(image: currentViewController.image!, completion: completion)

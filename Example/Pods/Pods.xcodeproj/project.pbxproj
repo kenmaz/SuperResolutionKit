@@ -21,6 +21,7 @@
 		7973199BA75012451F97B1A29F4C43F0 /* NonMaxSuppression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411E0D9D404BCAE60E89E0312F7646D9 /* NonMaxSuppression.swift */; };
 		7F53799CFB442A7AEC26336D0BAA0F37 /* SuperResolutionKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 821642B77FCF6395661AEE9785DE1360 /* SuperResolutionKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8488ECF420ADE9F4BC8D86DCE707B99D /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7253429EBCD4E4510832DACA3DA19307 /* Math.swift */; };
+		8ABBF66B213FF04500B23A6B /* SRCNN-photo.mlmodelc in Resources */ = {isa = PBXBuildFile; fileRef = 8ABBF66A213FF04500B23A6B /* SRCNN-photo.mlmodelc */; };
 		904C4BF85960BEE9BBADD4123EADEFAB /* SRCNN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166305A4B8EF01EB425ABF487C591F8C /* SRCNN.swift */; };
 		97831DC7200FDF0495D483C2BCBD08F8 /* SRCNNKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EBD90EEB4FA01B9468EA65D804864A4 /* SRCNNKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9AD81BE9E529E644DA4FCE608E742FA8 /* FSRCNN.mlmodelc in Resources */ = {isa = PBXBuildFile; fileRef = 94A95E63348057F61DAC55BC9EF28584 /* FSRCNN.mlmodelc */; };
@@ -59,27 +60,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0050166AFA318C0DFECF8B81DD49C72E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		0050166AFA318C0DFECF8B81DD49C72E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		1096DC0553729BFD018624FED8DE92F6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		153C847EFFDC9AF16F1502251EA51582 /* SuperResolutionKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = SuperResolutionKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		153C847EFFDC9AF16F1502251EA51582 /* SuperResolutionKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = SuperResolutionKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		166305A4B8EF01EB425ABF487C591F8C /* SRCNN.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SRCNN.swift; path = SuperResolutionKit/Classes/SRCNN.swift; sourceTree = "<group>"; };
 		188A906AD28E2738E26670D23D840AB1 /* FSRCNNConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FSRCNNConverter.swift; path = SuperResolutionKit/Classes/FSRCNNConverter.swift; sourceTree = "<group>"; };
 		1EFE98D52EB8FE777386B7A65CCC478A /* Pods-SuperResolutionKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SuperResolutionKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		1FABFA238FEB84F1BFC28CB2087FF218 /* Predictions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Predictions.swift; sourceTree = "<group>"; };
 		254821CD4EE0CE27E19A11354854F524 /* Pods-SuperResolutionKit_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SuperResolutionKit_Example-frameworks.sh"; sourceTree = "<group>"; };
 		266AB3B57EC0BA99C3AE6B9D2D823825 /* SuperResolutionKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SuperResolutionKit.xcconfig; sourceTree = "<group>"; };
-		2C82EB23E9F157FB3F71E49C37836040 /* Pods_SuperResolutionKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SuperResolutionKit_Example.framework; path = "Pods-SuperResolutionKit_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		330FE7E7B72328A53B9BB901790B3001 /* Pods_SuperResolutionKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SuperResolutionKit_Tests.framework; path = "Pods-SuperResolutionKit_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C82EB23E9F157FB3F71E49C37836040 /* Pods_SuperResolutionKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperResolutionKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		330FE7E7B72328A53B9BB901790B3001 /* Pods_SuperResolutionKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperResolutionKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3924FD8CF0808DD62D7695507E37835A /* UIImage+CVPixelBuffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+CVPixelBuffer.swift"; sourceTree = "<group>"; };
-		3B6A9980ED47E074899F51E14B3B09D3 /* SuperResolutionKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SuperResolutionKit.framework; path = SuperResolutionKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B6A9980ED47E074899F51E14B3B09D3 /* SuperResolutionKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SuperResolutionKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D92BFFC366EA71CDBC9E1D56A975D59 /* Pods-SuperResolutionKit_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SuperResolutionKit_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		40C422850622570ABB9ED36AE8CB9C30 /* SuperResolutionKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SuperResolutionKit.modulemap; sourceTree = "<group>"; };
 		411E0D9D404BCAE60E89E0312F7646D9 /* NonMaxSuppression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NonMaxSuppression.swift; sourceTree = "<group>"; };
 		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		661D620C39CF3216082DC25501720924 /* CVPixelBuffer+Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "CVPixelBuffer+Helpers.swift"; sourceTree = "<group>"; };
-		688075E7FD221378850D65F10DB258D0 /* SRCNN.mlmodelc */ = {isa = PBXFileReference; includeInIndex = 1; name = SRCNN.mlmodelc; path = SuperResolutionKit/Assets/SRCNN.mlmodelc; sourceTree = "<group>"; };
+		688075E7FD221378850D65F10DB258D0 /* SRCNN.mlmodelc */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = SRCNN.mlmodelc; path = SuperResolutionKit/Assets/SRCNN.mlmodelc; sourceTree = "<group>"; };
 		693A8B1E20C6A1AF08C5E46963D21C49 /* Pods-SuperResolutionKit_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SuperResolutionKit_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		71AF7AEAB69F88A5274F0211BCDB04AA /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		71AF7AEAB69F88A5274F0211BCDB04AA /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7253429EBCD4E4510832DACA3DA19307 /* Math.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		72FF90910DCCF739644A32A7C1D8ED99 /* Pods-SuperResolutionKit_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SuperResolutionKit_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		7416E2C9840A6AC5143783CD48DD9E1A /* Pods-SuperResolutionKit_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SuperResolutionKit_Tests-umbrella.h"; sourceTree = "<group>"; };
@@ -89,12 +90,13 @@
 		842CCAB7C16F3837D5F6584C8D1BDDD4 /* Pods-SuperResolutionKit_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SuperResolutionKit_Example-dummy.m"; sourceTree = "<group>"; };
 		8651FC9EAD182BA930C1DA0AA7A54EBD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A15D4DA2D787B08A2FED5D5771C2BA0 /* Pods-SuperResolutionKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SuperResolutionKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		8ABBF66A213FF04500B23A6B /* SRCNN-photo.mlmodelc */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "SRCNN-photo.mlmodelc"; path = "SuperResolutionKit/Assets/SRCNN-photo.mlmodelc"; sourceTree = "<group>"; };
 		8DD1F761C7A3A190E8E063EB4AC8A1AE /* Pods-SuperResolutionKit_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SuperResolutionKit_Example.modulemap"; sourceTree = "<group>"; };
 		8E2A8BCACDE8E8EC6F723BA8A245FFE7 /* Array.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		94A95E63348057F61DAC55BC9EF28584 /* FSRCNN.mlmodelc */ = {isa = PBXFileReference; includeInIndex = 1; name = FSRCNN.mlmodelc; path = SuperResolutionKit/Assets/FSRCNN.mlmodelc; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		94A95E63348057F61DAC55BC9EF28584 /* FSRCNN.mlmodelc */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = FSRCNN.mlmodelc; path = SuperResolutionKit/Assets/FSRCNN.mlmodelc; sourceTree = "<group>"; };
 		9CB776F5B80108679FB037098DB1C24F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9DDBA5A6EAC7BC437D6E6D2C6FFCFE9B /* SuperResolutionKit.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = SuperResolutionKit.bundle; path = "SuperResolutionKit-SuperResolutionKit.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DDBA5A6EAC7BC437D6E6D2C6FFCFE9B /* SuperResolutionKit.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperResolutionKit.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9C59B0D4EAC6D5C90EE9D13C9626275 /* Pods-SuperResolutionKit_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SuperResolutionKit_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		AE59A858C1D6658141430C36E49282C4 /* MLMultiArray+Image.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "MLMultiArray+Image.swift"; sourceTree = "<group>"; };
 		B8421731217E7919E94821D8E3587508 /* Pods-SuperResolutionKit_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SuperResolutionKit_Example-umbrella.h"; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 		BE8377D7A43C2E6D35F3F146803F9A88 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8ABBF66A213FF04500B23A6B /* SRCNN-photo.mlmodelc */,
 				94A95E63348057F61DAC55BC9EF28584 /* FSRCNN.mlmodelc */,
 				688075E7FD221378850D65F10DB258D0 /* SRCNN.mlmodelc */,
 			);
@@ -452,6 +455,7 @@
 			files = (
 				9AD81BE9E529E644DA4FCE608E742FA8 /* FSRCNN.mlmodelc in Resources */,
 				2AEFF00207BD561F6270AE664A98688C /* SRCNN.mlmodelc in Resources */,
+				8ABBF66B213FF04500B23A6B /* SRCNN-photo.mlmodelc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
